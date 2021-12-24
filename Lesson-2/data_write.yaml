@@ -1,0 +1,10 @@
+key-1:
+- val1
+- val2
+- 3
+key-2: 777
+key-3:
+  inner_key-1: 858€
+  inner_key-2: 3‡
+  inner_key-3: Ð584
+  inner_key-4: 3È
