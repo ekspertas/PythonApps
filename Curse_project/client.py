@@ -9,7 +9,7 @@ from utils import load_configs, send_message, get_message
 CONFIGS = {}
 
 
-def create_presence_message(account_name):
+def create_presence_message(account_name, CONFIGS):
     message = {
         CONFIGS.get('ACTION'): CONFIGS.get('PRESENCE'),
         CONFIGS.get('TIME'): time.time(),
@@ -20,7 +20,7 @@ def create_presence_message(account_name):
     return message
 
 
-def handle_response(message):
+def handle_response(message, CONFIGS):
     if CONFIGS.get('RESPONSE') in message:
         if message[CONFIGS.get('RESPONSE')] == 200:
             return '200 : OK'
@@ -45,11 +45,11 @@ def main():
 
     transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     transport.connect((server_address, server_port))
-    presence_message = create_presence_message('Guest')
+    presence_message = create_presence_message('Guest', CONFIGS)
     send_message(transport, presence_message, CONFIGS)
     try:
         response = get_message(transport, CONFIGS)
-        handled_response = handle_response(response)
+        handled_response = handle_response(response, CONFIGS)
         print(f'Ответ от сервера: {response}')
         print(handled_response)
     except (ValueError, json.JSONDecodeError):
