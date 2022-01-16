@@ -8,7 +8,7 @@ from utils import load_configs, send_message, get_message
 CONFIGS = {}
 
 
-def handle_message(message):
+def handle_message(message, CONFIGS):
     if CONFIGS.get('ACTION') in message \
             and message[CONFIGS.get('ACTION')] == CONFIGS.get('PRESENCE') \
             and CONFIGS.get('TIME') in message \
@@ -57,7 +57,7 @@ def main():
         client, client_address = transport.accept()
         try:
             message = get_message(client, CONFIGS)
-            response = handle_message(message)
+            response = handle_message(message, CONFIGS)
             send_message(client, response, CONFIGS)
             client.close()
         except (ValueError, json.JSONDecodeError):
