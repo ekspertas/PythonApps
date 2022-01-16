@@ -1,0 +1,22 @@
+2022-01-16 19:15:55,045 INFO       server  Server ONLINE
+2022-01-16 19:19:39,013 INFO       server  Server ONLINE
+2022-01-16 19:20:57,312 INFO       server  Server ONLINE
+2022-01-16 19:35:22,944 CRITICAL   server_log_config Критическая ошибка
+2022-01-16 19:35:22,945 ERROR      server_log_config Ошибка
+2022-01-16 19:35:22,946 INFO       server_log_config Информационное сообщение
+2022-01-16 19:49:58,264 CRITICAL   server_log_config Критическая ошибка
+2022-01-16 19:49:58,265 ERROR      server_log_config Ошибка
+2022-01-16 19:49:58,266 DEBUG      server_log_config Отладочная информация
+2022-01-16 19:49:58,266 INFO       server_log_config Информационное сообщение
+2022-01-16 19:52:39,981 INFO       server  Server ONLINE
+2022-01-16 19:52:56,251 INFO       server  Request received
+2022-01-16 19:52:56,252 INFO       server  Принято сообщение от клиента
+2022-01-16 20:50:53,742 INFO       server  Server ONLINE
+2022-01-16 20:51:00,007 INFO       server  Request received
+2022-01-16 20:51:00,008 INFO       server  Принято сообщение от клиента
+2022-01-16 20:57:29,472 INFO       server  Request received
+2022-01-16 20:57:29,473 INFO       server  Принято сообщение от клиента
+2022-01-16 21:07:56,442 INFO       server  Request received
+2022-01-16 21:07:56,443 INFO       server  Принято сообщение от клиента
+2022-01-16 21:11:34,922 INFO       server  Request received
+2022-01-16 21:11:34,923 INFO       server  Принято сообщение от клиента
