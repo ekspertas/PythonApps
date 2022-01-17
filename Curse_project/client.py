@@ -4,12 +4,13 @@ import socket
 import time
 
 
-from utils import load_configs, send_message, get_message
+from utils import load_configs, send_message, get_message, log
 from log.client_log_config import client_log
 
 CONFIGS = {}
 
 
+@log
 def create_presence_message(account_name, CONFIGS):
     message = {
         CONFIGS.get('ACTION'): CONFIGS.get('PRESENCE'),
@@ -22,6 +23,7 @@ def create_presence_message(account_name, CONFIGS):
     return message
 
 
+@log
 def handle_response(message, CONFIGS):
     if CONFIGS.get('RESPONSE') in message:
         if message[CONFIGS.get('RESPONSE')] == 200:

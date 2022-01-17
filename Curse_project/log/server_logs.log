@@ -20,3 +20,10 @@
 2022-01-16 21:07:56,443 INFO       server  Принято сообщение от клиента
 2022-01-16 21:11:34,922 INFO       server  Request received
 2022-01-16 21:11:34,923 INFO       server  Принято сообщение от клиента
+2022-01-17 12:36:49,078 INFO       server  Server ONLINE
+2022-01-17 12:37:13,636 DEBUG      utils   Функция "handle_message" вызвана функцией "main"
+2022-01-17 12:37:13,636 INFO       server  Request received
+2022-01-17 12:37:13,637 INFO       server  Принято сообщение от клиента
+2022-01-17 12:39:10,617 DEBUG      utils   Функция "handle_message" вызвана функцией "main"
+2022-01-17 12:39:10,617 INFO       server  Request received
+2022-01-17 12:39:10,617 INFO       server  Принято сообщение от клиента

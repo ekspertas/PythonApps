@@ -2,13 +2,14 @@ import json
 import socket
 import sys
 
-from utils import load_configs, send_message, get_message
+from utils import load_configs, send_message, get_message, log
 from log.server_log_config import server_log
 
 
 CONFIGS = {}
 
 
+@log
 def handle_message(message, CONFIGS):
     if CONFIGS.get('ACTION') in message \
             and message[CONFIGS.get('ACTION')] == CONFIGS.get('PRESENCE') \
