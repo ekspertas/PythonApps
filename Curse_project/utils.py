@@ -3,6 +3,10 @@ import os
 import sys
 from dotenv import load_dotenv
 
+import logging
+import inspect
+from functools import wraps
+
 
 def load_configs(is_server=True):
     config_keys = [
@@ -13,6 +17,9 @@ def load_configs(is_server=True):
         'ACTION',
         'TIME',
         'USER',
+        'SENDER',
+        'MESSAGE',
+        'MESSAGE_TEXT',
         'ACCOUNT_NAME',
         'PRESENCE',
         'RESPONSE',
@@ -52,3 +59,17 @@ def get_message(opened_socket, CONFIGS):
             return response_dict
         raise ValueError
     raise ValueError
+
+
+server_log = logging.getLogger('server_app')
+client_log = logging.getLogger('client_app')
+
+
+def log(func):
+    @wraps(func)
+    def call(*args, **kwargs):
+        outer_func = inspect.stack()[1][3]
+        server_log.debug(f'Функция "{func.__name__}" вызвана функцией "{outer_func}"')
+        client_log.debug(f'Функция "{func.__name__}" вызвана функцией "{outer_func}"')
+        return func(*args, **kwargs)
+    return call
